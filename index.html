@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Büyük sayı bul</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            margin: auto;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: lightpink;
+            transform: scale(1.2);
+        }
+        #innerDiv{
+            width: 100px;
+            height: 60px;
+            background-color: lightcoral;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Büyük Sayıyı Bul</h1>
+        <div id="innerDiv"></div>
+        <button onclick="BuyukSayi()">En Büyük Sayı</button>
+        <p>Girilen 3 sayının en BÜYÜĞÜNÜ getir</p>
+    </div>
+
+    <script>
+        function BuyukSayi() {
+            let sayi1 = prompt('1. sayıyı girin :');
+            let sayi2 = prompt('2. sayıyı girin :');
+            let sayi3 = prompt('3. sayıyı girin :');
+
+            let dizi = [sayi1, sayi2, sayi3];
+            console.log(dizi);
+
+            dizi.sort(function (a, b) {
+                return b - a
+            });
+
+            console.log(dizi[0]);// b-a yazdığımız için 0. eleman
+            document.getElementById('innerDiv').innerHTML = dizi[0];
+        }
+
+
+    </script>
+
+</body>
+
+</html>
